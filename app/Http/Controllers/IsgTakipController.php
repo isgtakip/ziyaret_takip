@@ -13,25 +13,21 @@ class IsgTakipController extends Controller
 {
     //
 
-    public function fileImportExport()
-    {
-       return view('file-import');
-    }
-   
+
     /**
     * @return \Illuminate\Support\Collection
     */
     public function fileImport(Request $request) 
     {
-        /*
+        
         $request->validate([
             'import_file' => 'required|file|mimes:xls,xlsx'
         ]);
-        */
+        
 
-        Excel::import(new IsgTakipImport, $request->file('file')->store('temp'));
-        return back();
-        //return response()->json(['message' => 'uploaded successfully'], 200);
+        Excel::import(new IsgTakipImport, $request->file('import_file')->store('temp'));
+       // return back();
+        return response()->json(['message' => 'uploaded successfully'], 200);
     }
     /**
     * @return \Illuminate\Support\Collection

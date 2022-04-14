@@ -24,6 +24,3 @@ Route::post('login',[AuthController::class, 'login']);
 Route::post('logout',[AuthController::class, 'logout']);
 
 
-Route::get('file-import-export', [IsgTakipController::class, 'fileImportExport']);
-Route::post('file-import', [IsgTakipController::class, 'fileImport'])->name('file-import');
-Route::get('file-export', [IsgTakipController::class, 'fileExport'])->name('file-export');

@@ -69,6 +69,10 @@ Route::get('ana_firmalar',[FirmsController::class, 'getAnaFirmalar']);
 Route::get('getFirmsAllData',[FirmsController::class, 'getFirmsAllData']);
 Route::apiResource('lokasyonlar',FirmsController::class);
 Route::get('il',[IlController::class, 'index']);
+Route::post('file-import', [IsgTakipController::class, 'fileImport']);
+Route::get('file-export', [IsgTakipController::class, 'fileExport']);
+Route::get('getSureler', [IsgTakipController::class, 'getSureler']);
 });
 
-Route::get('getSureler', [IsgTakipController::class, 'getSureler']);
+
+
